@@ -1,0 +1,61 @@
+﻿<Window x:Class="BitcoinTx.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BitcoinTx"
+        mc:Ignorable="d"
+        Title="Bitcoin Tx" Height="425" Width="667" Icon="btc-512b.png">
+
+	<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto"/>
+
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<Border Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Background="LightBlue" />
+			<Border Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" Background="LightBlue" />
+			<Label Grid.Row="0" Grid.Column="0">From Ext Address:</Label>
+			<TextBox Name="txtExtPubKey" Grid.Row="0" Grid.Column="1" Margin="3,3,3,3" ToolTip="Extended public key"></TextBox>
+			<Button Name="btnBalance" Grid.Row="0" Grid.Column="2" Content=">>" Width="20" Margin="3,3,3,3" ToolTip="Get Extended Balance" Click="btnBalance_Click"/>
+			<Label Grid.Row="1" Grid.Column="0">Receive Address:</Label>
+			<TextBox Name="txtRecAddr" Grid.Row="1" Grid.Column="1" Margin="3,3,3,3" ToolTip="Address to send funds to" Grid.ColumnSpan="2"></TextBox>
+			<Label Grid.Row="2" Grid.Column="0">Change Address:</Label>
+			<TextBox Name="txtChgAddr" Grid.Row="2" Grid.Column="1" Margin="3,3,3,3" ToolTip="[Optional] Address to send change to" Grid.ColumnSpan="2"></TextBox>
+			<Label Grid.Row="3" Grid.Column="0">Send Amount:</Label>
+			<TextBox Name="txtSendAmt" Grid.Row="3" Grid.Column="1" Margin="3,3,3,3" ToolTip="Send amount in Satoshis" Grid.ColumnSpan="2"></TextBox>
+			<Label Grid.Row="4" Grid.Column="0">Fee Amount:</Label>
+			<TextBox Name="txtFeeAmt" Grid.Row="4" Grid.Column="1" Margin="3,3,3,3" ToolTip="Fee amount in Satoshis"></TextBox>
+			<Button Name="btnEstFee" Grid.Row="4" Grid.Column="2" Content=">>" Width="20" Margin="3,3,3,3" ToolTip="Get Estimated Fee" Click="btnEstFee_Click"/>
+			<Button Name="btnCreateTx" Grid.Row="5" Grid.Column="0" Margin="3,3,3,3" Content="Create Tx" Click="btnCreateTx_Click" VerticalAlignment="Top" ToolTip="Serialize Tx to JSON string"/>
+			<TextBox AcceptsReturn="True" Name="txtTxJSON" Grid.Row="5" Grid.Column="1" Margin="3,3,3,3" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" ToolTip="Serialized Transaction"/>
+			<GridSplitter Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Background="DarkCyan" Height="3" HorizontalAlignment="Stretch"/>
+			<Label Grid.Row="7" Grid.Column="0">Ext Private Key:</Label>
+			<TextBox Name="txtExtPvtKey" Grid.Row="7" Grid.Column="1" Margin="3,3,3,3" ToolTip="Extended public key"></TextBox>
+			<Button Name="btnAllKeys" Grid.Row="7" Grid.Column="2" Content=">>" Width="20" Margin="3,3,3,3" ToolTip="Get Derived Keys" Click="btnAllKeys_Click"/>
+			<Button Name="btnSignTx" Grid.Row="8" Grid.Column="0" Margin="3,3,3,3" Content="Sign Tx" VerticalAlignment="Top" Click="btnSignTx_Click" ToolTip="Sign Tx using private key"></Button>
+			<TextBox AcceptsReturn="True" Name="txtTxSignedHex" Grid.Row="8" Grid.Column="1" Margin="3,3,3,3" ToolTip="Signed Tx Hex" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2"/>
+			<GridSplitter Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" Background="DarkCyan" Height="3" HorizontalAlignment="Stretch"/>
+			<Button Name="btnBroadcastTx" Grid.Row="10" Grid.Column="0" Margin="3,3,3,3" Content="Broadcast Tx" Click="btnBroadcastTx_Click" ToolTip="Broadcast Tx on Bitcoin network"></Button>
+			<TextBox Name="txtTxHash" Grid.Row="10" Grid.Column="1" Margin="3,3,3,3" ToolTip="Tx Hash" Grid.ColumnSpan="2"/>
+			<TextBox AcceptsReturn="True" Name="txtStatus" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="3" Background="LightGoldenrodYellow" Margin="3,3,3,3" ToolTip="Status" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
+		</Grid>
+	</ScrollViewer>
+</Window>
