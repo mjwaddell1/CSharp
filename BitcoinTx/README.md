@@ -1,4 +1,4 @@
-This app demonstrates how to use the NBitcoin library to create a bitcoin transaction and sign it offline. The app is written in WPF and uses the NBitcoin Nuget package.
+This app demonstrates how to use the NBitcoin library to create a bitcoin transaction and sign it offline. The app is written in WPF usong VS 2017 and uses the NBitcoin Nuget package.
 Using the application:
 1)	Start the application
 2)	There is a test extended key already hardcoded in the app. If you have your own extended private key, you can enter it into the Ext Private Key field and click the arrow button to get the extended public key and derived addresses used in transactions. If using your own key, you will need to fill in the first three fields in the form. The receive and change address are from the same extended address so the transaction will send bitcoin to the same extended address.
