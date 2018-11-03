@@ -15,13 +15,14 @@ Using the application:
 	- Copy the signed transaction hex to the online application for broadcast
 8)	Click the Broadcast Tx button. If broadcast is successful, a transaction hex should be returned. You can use this hex to look up you transaction on the test blockchain: https://live.blockcypher.com/btc-testnet/
 Remember that your transaction is on the testnet blockchain. It will not appear on the mainnet (real bitcoin) chain.
+
 Notes concerning the application:
-	- The app is hardcoded to use testnet. You can switch to mainnet (real bitcoin) by using the flag at the top of MainWindow.xaml.cs.
-	- The app may be used by several people so you will probably want to use your own extended private key. You can create a new random key using the code in MainWindow.xaml.cs (CreateAddresses)
-	- The bitcoin node address and ElectrumX server address are hardcoded in the application (TxUtil.cs). If a node is down, you can find other servers here:
-		- Mainnet ElectrumX & Bitcoin: https://uasf.saltylemon.org/electrum
-		- Mainnet ElectrumX: https://1209k.com/bitcoin-eye/ele.php
-		- Testnet ElectrumX: https://1209k.com/bitcoin-eye/ele.php?chain=tbtc
+- The app is hardcoded to use testnet. You can switch to mainnet (real bitcoin) by using the flag at the top of MainWindow.xaml.cs.
+- The app may be used by several people so you will probably want to use your own extended private key. You can create a new random key using the code in MainWindow.xaml.cs (CreateAddresses)
+- The bitcoin node address and ElectrumX server address are hardcoded in the application (TxUtil.cs). If a node is down, you can find other servers here:
+	- Mainnet ElectrumX & Bitcoin: https://uasf.saltylemon.org/electrum
+	- Mainnet ElectrumX: https://1209k.com/bitcoin-eye/ele.php
+	- Testnet ElectrumX: https://1209k.com/bitcoin-eye/ele.php?chain=tbtc
 
 
 Questions and comments are welcome - mjwaddell {AT} hotmail.com
